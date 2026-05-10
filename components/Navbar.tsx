@@ -42,6 +42,12 @@ export default function Navbar() {
             >{item}</a>
           </li>
         ))}
+        <li>
+          <Link href="/catalog" style={{
+            fontSize: '0.7rem', letterSpacing: '0.18em', textTransform: 'uppercase',
+            color: 'var(--gold)', textDecoration: 'none', fontWeight: 500,
+          }}>Catalog</Link>
+        </li>
       </ul>
 
       <a href="https://www.gemsindia.co.in/wholesale" target="_blank" rel="noreferrer" style={{
