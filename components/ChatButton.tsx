@@ -52,7 +52,7 @@ export default function ChatButton() {
         style={{
           position: 'fixed', right: 0, top: '50%',
           transform: 'translateY(-50%) rotate(-90deg)',
-          transformOrigin: 'right center',
+          transformOrigin: 'right 72%',
           background: open ? 'var(--rust)' : 'rgb(51,49,50)',
           color: '#ffffff',
           height: '42px', lineHeight: '42px', padding: '0 22px',
