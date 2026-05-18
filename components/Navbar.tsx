@@ -223,11 +223,13 @@ export default function Navbar() {
               onMouseEnter={cancelClose}
               onMouseLeave={startClose}
               style={{
-                position: 'absolute', top: '100%', left: 0, right: 0,
+                position: 'absolute', top: '100%', left: 0,
+                width: 'min(62vw, 960px)',
                 background: 'var(--paper)',
+                borderRight: '1px solid var(--hair)',
                 borderBottom: '1px solid var(--hair)',
-                display: 'grid', gridTemplateColumns: '260px 1fr 300px',
-                boxShadow: '0 12px 48px rgba(26,22,17,0.10)',
+                display: 'grid', gridTemplateColumns: '220px 1fr 260px',
+                boxShadow: '8px 12px 48px rgba(26,22,17,0.10)',
                 zIndex: 300,
               }}
             >
