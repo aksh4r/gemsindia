@@ -5,58 +5,58 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 // ─── Mega-menu data ───────────────────────────────────────────────────────────
 const MEGA: Record<string, {
-  eyebrow: string
-  links: { label: string; href?: string; sub?: boolean }[]
+  categories: string[]
+  links: { label: string; href?: string }[]
   promo: { label: string; title: string; gemClass: string; href?: string }
 }> = {
   shop: {
-    eyebrow: 'Volume 07 · Spring Edit',
+    categories: ['Gemstones', 'Jewellery', 'Sculptures', 'Metaphysical'],
     links: [
-      { label: 'New Arrivals', href: 'https://www.gemsindia.co.in' },
-      { label: 'Gem Stones', href: 'https://www.gemsindia.co.in/gemstones', sub: true },
-      { label: 'Large Specimens', href: 'https://www.gemsindia.co.in/largegemstones', sub: true },
-      { label: 'Sculptures', href: 'https://www.gemsindia.co.in/sculptures', sub: true },
-      { label: 'Jewellery', href: 'https://www.gemsindia.co.in/jewelry', sub: true },
-      { label: 'Metaphysical', href: 'https://www.gemsindia.co.in/metaphysical', sub: true },
-      { label: 'Tools & Accessories', href: 'https://www.gemsindia.co.in', sub: true },
-      { label: 'Bespoke Commissions', sub: true },
+      { label: 'All Gemstones', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Ruby & Spinel', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Emerald & Tsavorite', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Blue Sapphire', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Tourmaline', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Aquamarine & Beryl', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Opal & Moonstone', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Bespoke Commissions', href: 'https://www.gemsindia.co.in' },
     ],
-    promo: { label: 'Featured', title: "Pigeon's Blood Ruby · 21.5ct", gemClass: 'gem-ruby', href: 'https://www.gemsindia.co.in/gemstones' },
+    promo: { label: 'Featured', title: "Pigeon's Blood Ruby · 21.5 ct", gemClass: 'gem-ruby', href: 'https://www.gemsindia.co.in/gemstones' },
   },
   rough: {
-    eyebrow: 'As mined · Uncut',
+    categories: ['Ruby', 'Emerald', 'Sapphire', 'Tourmaline', 'Quartz'],
     links: [
       { label: 'All Rough Stones', href: 'https://www.gemsindia.co.in/gemstones' },
-      { label: 'Ruby Rough', sub: true },
-      { label: 'Emerald Rough', sub: true },
-      { label: 'Sapphire Rough', sub: true },
-      { label: 'Tourmaline Rough', sub: true },
-      { label: 'Quartz & Crystals', sub: true },
-      { label: 'Mineral Specimens', sub: true },
+      { label: 'Ruby Rough', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Emerald Rough', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Sapphire Rough', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Tourmaline Rough', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Quartz & Crystals', href: 'https://www.gemsindia.co.in/gemstones' },
+      { label: 'Mineral Specimens', href: 'https://www.gemsindia.co.in/gemstones' },
     ],
     promo: { label: 'Specimen', title: 'Amethyst Geode · 2.5 Kg', gemClass: 'gem-amethyst', href: 'https://www.gemsindia.co.in' },
   },
   wholesale: {
-    eyebrow: 'Trade & Bulk Orders',
+    categories: ['Trade Enquiry', 'Bulk Orders', 'Designer Programme'],
     links: [
-      { label: 'Wholesale Enquiry', href: 'https://www.gemsindia.co.in/wholesale' },
-      { label: 'Trade Pricing', sub: true },
-      { label: 'Bulk Orders', sub: true },
-      { label: 'Designer Programme', sub: true },
-      { label: 'Email: gemsindia@ymail.com', href: 'mailto:gemsindia@ymail.com', sub: true },
-      { label: 'Phone: +91 98100 11169', href: 'tel:+919810011169', sub: true },
+      { label: 'Wholesale Overview', href: 'https://www.gemsindia.co.in/wholesale' },
+      { label: 'Trade Pricing', href: 'https://www.gemsindia.co.in/wholesale' },
+      { label: 'Minimum Order Quantities', href: 'https://www.gemsindia.co.in/wholesale' },
+      { label: 'Designer Membership', href: 'https://www.gemsindia.co.in/wholesale' },
+      { label: 'gemsindia@ymail.com', href: 'mailto:gemsindia@ymail.com' },
+      { label: '+91 98100 11169', href: 'tel:+919810011169' },
     ],
     promo: { label: 'Trade', title: 'Wholesale Pricing for Designers & Dealers', gemClass: 'gem-citrine', href: 'https://www.gemsindia.co.in/wholesale' },
   },
   gemlab: {
-    eyebrow: 'Kikan Gem Certification Lab',
+    categories: ['Certification', 'Origin Reports', 'Treatment Analysis', 'Submit a Stone'],
     links: [
       { label: 'About KGCL', href: 'https://www.gemsindia.co.in' },
-      { label: 'Gem Certification', sub: true },
-      { label: 'Origin Reports', sub: true },
-      { label: 'Treatment Reports', sub: true },
-      { label: 'Submit a Stone', sub: true },
-      { label: 'Pricing from ₹1,500', sub: true },
+      { label: 'Gem Certification', href: 'https://www.gemsindia.co.in' },
+      { label: 'Country of Origin', href: 'https://www.gemsindia.co.in' },
+      { label: 'Heat Treatment Reports', href: 'https://www.gemsindia.co.in' },
+      { label: 'Submit a Stone', href: 'https://www.gemsindia.co.in' },
+      { label: 'Pricing from ₹1,500', href: 'https://www.gemsindia.co.in' },
     ],
     promo: { label: 'Lab', title: 'In-house KGCL · Complimentary on every purchase', gemClass: 'gem-sapphire', href: 'https://www.gemsindia.co.in' },
   },
@@ -102,7 +102,7 @@ export default function Navbar() {
     if (closeTimer.current) clearTimeout(closeTimer.current)
   }
 
-  const data = megaOpen ? MEGA[megaOpen] : null
+  const data = megaOpen && MEGA[megaOpen] ? MEGA[megaOpen] : null
 
   return (
     <>
@@ -216,85 +216,81 @@ export default function Navbar() {
           {megaOpen && data && (
             <motion.div
               key={megaOpen}
-              initial={{ x: '-100%', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: '-100%', opacity: 0 }}
-              transition={{ type: 'tween', duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ type: 'tween', duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
               onMouseEnter={cancelClose}
               onMouseLeave={startClose}
               style={{
-                position: 'absolute', top: '100%', left: 0,
-                width: 'min(82vw, 860px)',
+                position: 'absolute', top: '100%', left: 0, right: 0,
                 background: 'var(--paper)',
-                borderRight: '1px solid var(--hair)',
                 borderBottom: '1px solid var(--hair)',
-                display: 'grid', gridTemplateColumns: '200px 1fr 260px',
-                boxShadow: '8px 8px 40px rgba(26,22,17,0.12)',
+                display: 'grid', gridTemplateColumns: '260px 1fr 300px',
+                boxShadow: '0 12px 48px rgba(26,22,17,0.10)',
                 zIndex: 300,
               }}
             >
-              {/* Category label */}
-              <div style={{ padding: '36px 28px', borderRight: '1px solid var(--hair)', background: 'var(--paper-2)' }}>
-                <p style={{ fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--rust)', marginBottom: 20, fontFamily: 'var(--sans)', fontWeight: 500 }}>{data.eyebrow}</p>
-                {(['shop', 'rough', 'wholesale', 'gemlab'] as const).map((key) => (
-                  <button key={key} onClick={() => setMegaOpen(key)}
-                    style={{
-                      display: 'block', width: '100%', textAlign: 'left',
-                      fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase',
-                      fontWeight: 500, color: megaOpen === key ? 'var(--rust)' : 'var(--ink-soft)',
-                      background: 'none', border: 'none', cursor: 'pointer',
-                      padding: '7px 0', fontFamily: 'var(--sans)',
-                      borderLeft: megaOpen === key ? '2px solid var(--rust)' : '2px solid transparent',
-                      paddingLeft: 12, transition: 'color 0.15s, border-color 0.15s',
-                    }}
-                    onMouseOver={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--ink)' }}
-                    onMouseOut={e => { (e.currentTarget as HTMLButtonElement).style.color = megaOpen === key ? 'var(--rust)' : 'var(--ink-soft)' }}
-                  >
-                    {{ shop: 'Shop', rough: 'Rough Stones', wholesale: 'Wholesale', gemlab: 'Gem Lab' }[key]}
-                  </button>
+              {/* Left — large display category names */}
+              <div style={{ padding: '44px 40px 44px 48px' }}>
+                {data.categories.map((cat, i) => (
+                  <p key={i} style={{
+                    fontFamily: 'var(--display)',
+                    fontSize: '26px',
+                    fontWeight: 400,
+                    letterSpacing: '0.01em',
+                    lineHeight: 1.15,
+                    color: i === 0 ? 'var(--ink)' : 'var(--taupe)',
+                    marginBottom: 14,
+                    cursor: 'default',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={e => (e.currentTarget.style.color = 'var(--ink)')}
+                  onMouseOut={e => (e.currentTarget.style.color = i === 0 ? 'var(--ink)' : 'var(--taupe)')}
+                  >{cat}</p>
                 ))}
               </div>
 
-              {/* Links */}
-              <div style={{ padding: '36px 40px' }}>
-                <p style={{ fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--taupe)', marginBottom: 24, fontFamily: 'var(--sans)', fontWeight: 500 }}>Browse</p>
+              {/* Middle — sub-links */}
+              <div style={{ padding: '44px 40px', borderLeft: '1px solid var(--hair)' }}>
+                <p style={{ fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--taupe)', marginBottom: 28, fontFamily: 'var(--sans)', fontWeight: 500 }}>Browse</p>
                 {data.links.map((link, i) => (
                   <a key={i} href={link.href ?? '#'}
-                    target={link.href?.startsWith('http') ? '_blank' : undefined}
+                    target={link.href?.startsWith('http') || link.href?.startsWith('mailto') || link.href?.startsWith('tel') ? '_blank' : undefined}
                     rel="noreferrer"
                     onClick={() => setMegaOpen(null)}
                     style={{
                       display: 'block',
-                      fontSize: link.sub ? '11px' : '12px',
-                      letterSpacing: '0.15em', textTransform: 'uppercase',
-                      fontWeight: link.sub ? 400 : 500,
-                      color: link.sub ? 'var(--ink-soft)' : 'var(--ink)',
-                      padding: '6px 0',
+                      fontSize: '11px',
+                      letterSpacing: '0.18em',
+                      textTransform: 'uppercase',
+                      fontWeight: 400,
+                      color: 'var(--ink-soft)',
+                      padding: '7px 0',
                       textDecoration: 'none',
-                      borderBottom: i < data.links.length - 1 ? '1px solid rgba(217,207,190,0.4)' : 'none',
                       transition: 'color 0.15s',
                     }}
-                    onMouseOver={e => (e.currentTarget.style.color = 'var(--rust)')}
-                    onMouseOut={e => (e.currentTarget.style.color = link.sub ? 'var(--ink-soft)' : 'var(--ink)')}
+                    onMouseOver={e => (e.currentTarget.style.color = 'var(--ink)')}
+                    onMouseOut={e => (e.currentTarget.style.color = 'var(--ink-soft)')}
                   >{link.label}</a>
                 ))}
               </div>
 
-              {/* Promo image */}
+              {/* Right — gem promo */}
               <a href={data.promo.href ?? '#'} target="_blank" rel="noreferrer"
                 onClick={() => setMegaOpen(null)}
-                style={{ position: 'relative', display: 'block', overflow: 'hidden', textDecoration: 'none' }}
+                style={{ position: 'relative', display: 'block', overflow: 'hidden', textDecoration: 'none', minHeight: 280 }}
               >
                 <div className={data.promo.gemClass} style={{ position: 'absolute', inset: 0 }}>
                   <div className="gem-overlay" />
                 </div>
                 <div style={{
                   position: 'absolute', inset: 0,
-                  background: 'linear-gradient(180deg, transparent 40%, rgba(26,22,17,0.7) 100%)',
+                  background: 'linear-gradient(180deg, transparent 40%, rgba(26,22,17,0.72) 100%)',
                 }} />
-                <div style={{ position: 'absolute', bottom: 28, left: 24, color: 'var(--paper)', zIndex: 2 }}>
-                  <p style={{ fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase', opacity: 0.7, marginBottom: 6, fontFamily: 'var(--sans)' }}>{data.promo.label}</p>
-                  <p style={{ fontFamily: 'var(--serif)', fontSize: '17px', fontWeight: 300, lineHeight: 1.3 }}>{data.promo.title}</p>
+                <div style={{ position: 'absolute', bottom: 28, left: 28, color: 'var(--paper)', zIndex: 2 }}>
+                  <p style={{ fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase', opacity: 0.65, marginBottom: 8, fontFamily: 'var(--sans)' }}>{data.promo.label}</p>
+                  <p style={{ fontFamily: 'var(--serif)', fontSize: '18px', fontWeight: 300, lineHeight: 1.3, maxWidth: 200 }}>{data.promo.title}</p>
                 </div>
               </a>
             </motion.div>
